@@ -1,1 +1,28 @@
-123
+Mips basics
+Examples:
+
+add   rd,rs,rt  # rd = rs + rt (signed addition. overflow is possible)
+addu  rd,rs,rt  # rd = rs + rt (unsigned addition)
+
+and   rd,rs,rt  # rd = rs AND rt
+
+sll   rd,rt, N  # rd = rt << N (0<N<31)
+
+If the integers a, b, and c are in registers $t0, $t1 and $t2 respectively, write code for the following:
+
+c = a-b+c
+
+First, lets rewrite this as
+
+c += a-b
+
+One way of coding this would be
+
+add  $t2,$t2,$t0    # c += a
+
+sub  $t2,$t2,$t1    # c -= b
+
+An alternate way would use a temporary register
+
+sub   $t3, $t0, $t1    # t3 = (a-b)
+add   $t2, $t2, $t3    # c += t3
