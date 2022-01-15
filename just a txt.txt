@@ -26,3 +26,4 @@ An alternate way would use a temporary register
 
 sub   $t3, $t0, $t1    # t3 = (a-b)
 add   $t2, $t2, $t3    # c += t3
+.
