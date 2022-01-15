@@ -1,0 +1,5 @@
+li $v0, 1 		# Load immediate $v0 with value 1
+bgtz $v0, $FLOW1 	# Branch to $FLOW1 label, if $v0 > 0
+bge $s1, $s0, L1 	# Branch to L1 label, if ($s1 ≥ $s0)
+j L2 			# Branch to L2 label, unconditionally
+beq $s0, $s1, L3 	# Branch to L1 label, if ($s1 = $s0)
